@@ -94,6 +94,20 @@ docker run -p 8081:8080 sandroherbst/esquenta-mfc4-docker:latest
 -- envia a imagem
 docker push sandroherbst/esquenta-mfc4-docker:latest
 
+---------------
 
+-- criar a pasta nginx
 
+-- criar o index.html
+
+-- criar o docker-compose.yaml
+
+-- subir o container usando o docker compose
+docker-compose up
+
+-- matar tudo
+docker-compose down
+
+-- subir e manter rodando
+docker-compose up -d
 
