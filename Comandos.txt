@@ -1,0 +1,99 @@
+-- rodar imagem hello-world
+docker run hello-world
+
+-- rodar imagem ubuntu
+docker run ubuntu /bin/bash
+
+-- sintaxe
+docker run <imagem>
+
+-- containers rodando
+docker ps
+
+-- constainers que já rodarma
+docker ps -a
+
+-- rodar imagem nginx exponto a porta 8080 e apontando para a 80 do container
+docker run -p 8080:80 nginx
+
+-- rodar container e continuar rodando
+docker run -d -p 8080:80 nginx
+
+-- ver containers rodando
+docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
+7cbc1354f5ab        nginx               "/docker-entrypoint.…"   16 seconds ago      Up 15 seconds       0.0.0.0:8080->80/tcp   charming_nobel
+
+-- para um container
+docker stop $id
+docker stop 7cbc1354f5ab
+
+-- remover um container
+docker rm $id
+
+-- visualiza os containers com docker ps -a e depois docker rm $id
+docker rm 
+
+-- dar um nome para o container
+docker run --name nginx -d -p 8080:80 nginx
+
+-- executar comando dentro do container
+docker exec $imagem $comando
+docker exec nginx ls
+
+-- executar comando de forma interativa
+docker exec -it nginx bash
+
+-- acessar a pasta que está o html
+cd /usr/share/nginx/html/
+
+-- atualizar os pacotes
+apt-get update
+
+-- instala o vim
+apt-get install -y vim
+
+-- edita o arquivo
+vim index.html
+
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<head>
+<title>Maratona FullCycle 4.0</title>
+<style>
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+</style>
+</head>
+<body>
+<h1>Eu sou Full Cycle</h1>
+<a href="https://github.com/SandroHerbst/MaratonaFullCycle4.0" target="_blank"><h2>Acesse meu repositório no Github</h2>
+</body>
+</html>
+
+--- listar imagens
+docker images
+
+-- apagar imagens
+docker rmi imagem
+
+-- criar o arquivo main.go
+
+-- criar o docker file
+
+-- criar a imagem
+docker build -t sandroherbst/esquenta-mfc4-docker:latest .
+
+-- roda a imagem
+docker run -p 8081:8080 sandroherbst/esquenta-mfc4-docker:latest
+
+-- envia a imagem
+docker push sandroherbst/esquenta-mfc4-docker:latest
+
+
+
+
