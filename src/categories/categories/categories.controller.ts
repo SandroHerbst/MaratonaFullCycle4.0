@@ -12,8 +12,8 @@ export class CategoriesController {
   }
 
   @Get(':id')
-  show(): Promise<Category> {
-    return this.categoriesService.findById(Param('id'));
+  show(@Param('id') id: string): Promise<Category> {
+    return this.categoriesService.findById(id);
   }
 
   @Post()
